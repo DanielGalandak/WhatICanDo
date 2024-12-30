@@ -1,7 +1,5 @@
 # WhatICanDo
 
-# Veřejný Repozitář: Ukázky Mého Kódu
-
 Tento repozitář obsahuje výběr projektů a skriptů, které reflektují mou práci a růst v oblasti programování. Využil jsem různé technologie a postupy, abych demonstroval své schopnosti a přístup k řešení problémů.
 
 ## Obsah
