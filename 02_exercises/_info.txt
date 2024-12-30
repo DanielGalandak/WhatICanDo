@@ -1,0 +1,8 @@
+Složka obsahuje úkoly, které byly vyhotoveny za účelem procvičení různých funkcionalit.
+
+Proces práce byl takový, že zadání úkolu vyhotovila ai (gpt-4o), úkol jsem vypracoval samostatně,
+a následně jsem vyhodnotil slabá místa kódu pomocí ai.
+Opět jsem samostatně vyhotovil a předložil funční prefinální verzi ai.
+
+Do finální verze jsem většinou začlenil několik vylepšení, která ai navrhla,
+typicky řešení chybových stavů.

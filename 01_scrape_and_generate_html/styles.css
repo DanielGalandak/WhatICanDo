@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+    background-color:
+        /*#91c915*/
+        /*#b2ea36*/
+        #d0d3d4;
+}
+
+.container>a {
+
+    border-radius: 10px 60px;
+    text-decoration: none;
+    cursor: default;
+    padding: 20px;
+    transition: outline 0.3s ease;
+
+
+}
+
+.container>a:hover {
+    outline: 2px solid black;
+}
+
+/* První sloupec */
+.container>a:nth-child(5n+1) {
+    background-color: #a715c9;
+    /* První sloupec */
+}
+
+.container>a:nth-child(5n+1)>h2 {
+    color: #c736ea
+}
+
+/* Druhý sloupec */
+.container>a:nth-child(5n+2) {
+    background-color: #c91591;
+}
+
+.container>a:nth-child(5n+2)>h2 {
+    color: #ea36b2;
+}
+
+/* Třetí sloupec */
+.container>a:nth-child(5n+3) {
+    background-color: #c91537;
+}
+
+.container>a:nth-child(5n+3)>h2 {
+    color: #ea3657;
+}
+
+/* Čtvrtý sloupec */
+.container>a:nth-child(5n+4) {
+    background-color: #c94d15;
+}
+
+.container>a:nth-child(5n+4)>h2 {
+    color: #ea6d36;
+}
+
+/* Pátý sloupec */
+.container>a:nth-child(5n) {
+    background-color: #c9a715;
+}
+
+.container>a:nth-child(5n)>h2 {
+    color: #eac836;
+}
+
+
+.container>a>img {
+    top: 10px;
+    border-radius: 10px 60px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .container {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .container>a {
+        width: 100%;
+    }
+}
+
+/*
+#a715c9 #c91591 #c91537 #c94d15 #c9a715 #91c915
+
+{'#a715c9': '#c736ea', '#c91591': '#ea36b2', '#c91537': '#ea3657', '#c94d15': '#ea6d36', '#c9a715': '#eac836', '#91c915': '#b2ea36'}

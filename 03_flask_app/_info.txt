@@ -1,0 +1,7 @@
+Aplikaci spouští soubor app.py.
+Jedná se o první webovou aplikaci, kterou jsem vytvořil.
+Kód není dobře strukturovaný a některé funkce jsou implementovány poněkud nelogicky.
+
+Nicméně základní cíl, tedy vytvořit dashboardu pro projekty se zdařil.
+Aplikace zobrazuje Gantův diagram, na základě zadaných dat a umí toto udělat souhrnně pro všechny 
+zadané klastry.

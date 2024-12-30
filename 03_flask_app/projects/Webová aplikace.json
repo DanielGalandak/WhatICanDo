@@ -1,0 +1,20 @@
+[
+    {
+        "timestamp": "2024-12-30 10:45:56",
+        "start_date": "2025-01-01",
+        "end_date": "2025-01-15",
+        "note": "P\u0159\u00edprava"
+    },
+    {
+        "timestamp": "2024-12-30 10:47:10",
+        "start_date": "2025-01-15",
+        "end_date": "2025-01-31",
+        "note": "Tvorba HTML"
+    },
+    {
+        "timestamp": "2024-12-30 10:48:26",
+        "start_date": "2025-01-31",
+        "end_date": "2025-02-05",
+        "note": "css"
+    }
+]

@@ -1,0 +1,4 @@
+
+
+1. Soubor web_scraping.py stahuje data, z url do souboru web_scraping.json.
+2. Soubor page_generator data zformátuje do html a vloží je do souboru 09_list.html.

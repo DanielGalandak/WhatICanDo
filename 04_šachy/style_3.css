@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    user-select: none;
+    /* Zakáže výběr textu v buňkách */
+    cursor: default;
+    /* Změní kurzor na normální při najetí */
+}
+
+table {
+    border: 1px solid black;
+    border-radius: 10%;
+    user-select: none;
+    /* Zakáže výběr textu v buňkách */
+    cursor: default;
+    /* Změní kurzor na normální při najetí */
+}
+
+#chess-board {
+    border-collapse: collapse;
+    width: 80vh;
+    /* Nastavení šířky podle výšky okna */
+    height: 80vh;
+    /* Výška podle výšky okna */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#chess-board td {
+    width: 10%;
+    /* Správně by mělo být 12.5 %, ale takto bude také fungovat, protože prohlížeče automaticky rozdělí zbylý
+                prostor  a rozdělí jej mezi všechny ostatní buňky.*/
+    /* Každá buňka bude 10 % z celé šířky šachovnice */
+    height: 10%;
+    /* Každá buňka bude 10 % z celé výšky šachovnice */
+}
+
+.white {
+    background-color: #F2D7B6;
+}
+
+.black {
+    background-color: #BF8969;
+}
+
+/* hover vybrané figury */
+.selected {
+    background-color: rgb(205, 205, 166);
+    outline: 2px solid rgb(237, 120, 120);
+}
+
+
+/* Číslování řad a písmena sloupců v sloupci a a řadě 1*/
+/* Přidání čísla do sloupce 'a' */
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+
+td {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    text-align: center;
+    font-size: 5vh;
+    /* Takto zvolené jednotky zajišťují responzivitu*/
+    /* Velikost pro figurky */
+    vertical-align: middle;
+    font-family: Arial, sans-seri f;
+    /* Zajistí změnu kurzoru a implicitní nastavení kliknutí*/
+    user-select: none;
+    /* Zakáže výběr textu v buňkách */
+    cursor: grab;
+    /* Změní kurzor, aby bylo patrné, že obsah lze přetáhnout */
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        top: 160px;
+        /* Úprava pozice pro menší obrazovky */
+    }
+}

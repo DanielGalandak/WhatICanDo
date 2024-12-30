@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detail projektu - {{ project_name }}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles_1.css">
+    <style>
+        body {
+            background-color: #520120
+        }
+
+        h1 {
+            color: #962B09;
+            border-color: #08403E;
+        }
+
+        h2 {
+            color: #962B09;
+        }
+
+        .btn-outline-myColor {
+            color: #962B09;
+            border-color: #962B09;
+            width: 150px;
+            border-radius: 50px;
+        }
+
+        .btn-outline-myColor:hover {
+            color: #08403E;
+            background-color: #962B09;
+            border-color: #706513;
+            text-shadow:
+                0 0 5px #706513,
+                0 0 10px #706513,
+                0 0 15px #706513,
+                0 0 20px #706513,
+                0 0 25px #706513,
+                0 0 30px #706513,
+                0 0 35px #706513,
+                0 0 40px #706513;
+        }
+
+        #note-text {
+            background-color: #B57114;
+            border-color: #962B09;
+            border-radius: 50px 0px 0px 50px;
+        }
+
+        #note-text::placeholder {
+            color: #706513;
+        }
+
+        ul {
+            color: #B57114;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="ohraniceni_textu">Detail projektu: {{ project_name }}</h1>
+        <hr>
+
+        <div class="mb-3">
+            <h2 class="ohraniceni_textu">Aktivity</h2>
+            <!-- Vložení Ganttova diagramu -->
+            <div id="gantt-chart">
+                {{ graph_html|safe }}
+            </div>
+        </div>
+        <hr>
+
+        <div class="mb-3">
+            <h2 class="ohraniceni_textu">Poznámky</h2>
+            <!-- Přidání method="POST" a action="" k formuláři -->
+            <form id="note-form" method="POST" action="">
+                <div class="input-group mb-3">
+                    <!-- Přidání name="note_text" k vstupnímu poli -->
+                    <input type="text" class="form-control" placeholder="Zadejte text poznámky" name="note_text"
+                        id="note-text">
+                    <button type="submit" class="btn btn-outline-myColor">Uložit</button>
+                </div>
+            </form>
+            <ul id="notes-list">
+                {% for timestamp, note_text in notes.items() %}
+                <li>{{ timestamp }}: {{ note_text }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <hr>
+
+        <div class="mb-3">
+            <a href="{{ url_for('edit_project', project_name=project_name) }}" class="btn btn-outline-myColor">Upravit
+                projekt</a>
+            <a href="{{ url_for('save') }}?project_name={{ project_name }}" class="btn btn-outline-myColor">Přidat
+                aktivitu</a>
+            <a href="{{ url_for('home') }}" class="btn btn-outline-myColor">Zpět</a>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('note-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Zamezí standardnímu odeslání formuláře
+
+            // Získání textu poznámky z pole
+            var noteText = document.getElementById('note-text').value;
+
+            // Odeslání poznámky na server pomocí Fetch API
+            fetch('', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'note_text': noteText
+                })
+            }).then(response => response.json())
+                .then(data => {
+                    // Přidání nové poznámky do seznamu poznámek na stránce
+                    var notesList = document.getElementById('notes-list');
+                    var newNoteItem = document.createElement('li');
+                    newNoteItem.textContent = data.timestamp + ': ' + noteText;
+                    notesList.appendChild(newNoteItem);
+
+                    // Vyčištění pole pro text poznámky
+                    document.getElementById('note-text').value = '';
+                }).catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+</html>
