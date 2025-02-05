@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výsledky analýzy</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
+</head>
+<body style="background-color: #34495e">
+    <h2 style="color: #566573; padding: 10px;">Výsledky analýzy</h2>
+    
+    {% for result in results %}
+        <div style="border: 1px solid black; padding: 10px; margin: 10px;">
+            <h3><a href="{{ result.url }}" target="_blank" style="text-decoration: None;">{{ result.headline or "Bez nadpisu" }}</a></h3>
+            <p><strong style="color: #B0E0E6;">Datum publikace: </strong> {{ result.date_published or "Neznámé" }}</p>
+            <p><strong style="color: #B0E0E6;">Popis: </strong> {{ result.description or "Není k dispozici" }}</p>
+            <p><strong style="color: #B0E0E6;">Článek: </strong> {{ result.article_body[:500] }}...</p>
+            <div style="border: 1px solid #566573; padding 10px;">   
+                <p style="padding: 0px 5px; color: #F5F5F5"><strong style="color: #6495ED">ZeroGPT detekce:</strong> 
+                    {% if result.zerogpt_is_human %}
+                        {{ result.zerogpt_is_human }} 
+                        /100
+                    {% elif result.zerogpt_is_human == 0 %}
+                    {{ result.zerogpt_is_human }}
+                        /100
+                    {% else %}
+                         -
+                    {% endif %}
+
+                </p>
+                <p style="padding: 5px; color: #F5F5F5"><strong style="color: #6495ED">Dodatečná zpětná vazba:</strong> {{ result.zerogpt_feedback or "Žádná" }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <button class="outline secondary" style="margin: 20px;">
+        <a href="/" style="text-decoration: None; color: inherit;">
+            Zpět
+        </a>
+    </button>
+</body>
+</html>
