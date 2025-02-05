@@ -59,7 +59,20 @@ Technologie: JavaScript, HTML, CSS
 Klíčové dovednosti:  
 - Implementace logiky herních pravidel  
 - Vytvoření interaktivního uživatelského rozhraní  
-- Práce s DOM a eventy  
+- Práce s DOM a eventy
+  
+
+---------------------------------------------
+
+### 05_AI_validator
+Popis: Jednoduchá aplikace ve framoworku Flask, která při vložení url jednoho či více článků validuje podíl umělé inteligence na tvorbě textu v těle článku.
+
+Technologie: Python, HTML, CSS
+
+Klíčové dovednosti:  
+- Implementace validace pomocí API na ZeroGpt
+- Parsing dat, Pandas
+- jinja syntaxe
 
 ---------------------------------------------
 
