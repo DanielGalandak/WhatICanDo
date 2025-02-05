@@ -7,7 +7,8 @@ Tento repozitář obsahuje výběr projektů a skriptů, které reflektují mou 
 1. [01_scrape_and_generate_html](#01_scrape_and_generate_html)  
 2. [02_exercises](#02_exercises)  
 3. [03_flask_app](#03_flask_app)  
-4. [04_šachy](#04_šachy)  
+4. [04_šachy](#04_šachy)
+5. [05_ai_validator](#05_ai_validator)
 
 ---------------------------------------------
 
@@ -64,7 +65,7 @@ Klíčové dovednosti:
 
 ---------------------------------------------
 
-### 05_AI_validator
+### 05_ai_validator
 Popis: Jednoduchá aplikace ve framoworku Flask, která při vložení url jednoho či více článků validuje podíl umělé inteligence na tvorbě textu v těle článku.
 
 Technologie: Python, HTML, CSS
